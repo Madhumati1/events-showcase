@@ -1,0 +1,59 @@
+﻿@model EventsShowcase.Models.EventModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>View Event Details</h2>
+
+<div>
+    @Html.DisplayNameFor(m => m.Title)
+    @Html.DisplayFor(m => m.Title)
+</div>
+<div>
+    @Html.DisplayNameFor(m => m.Description)
+    @Html.DisplayFor(m => m.Description)
+</div>
+<div>
+    @Html.DisplayNameFor(m => m.StartDate)
+    @Html.DisplayFor(m => m.StartDate)
+</div>
+<div>
+    @Html.DisplayNameFor(m => m.EndDate)
+    @Html.DisplayFor(m => m.EndDate)
+</div>
+<div>
+    @Html.DisplayNameFor(m => m.Price)
+    @Html.DisplayFor(m => m.Price)
+</div>
+<div>
+    @Html.DisplayNameFor(m => m.Location)
+    @Html.DisplayFor(m => m.Location)
+</div>
+<div>
+    @Html.LabelFor(m => m.City)
+    @Html.EditorFor(m => m.City)
+</div>
+<div>
+    @Html.LabelFor(m => m.Category)
+    @Html.EditorFor(m => m.Category)
+</div>
+<div>
+    @Html.DisplayNameFor(m => m.Organizer)
+    @Html.DisplayFor(m => m.Organizer)
+</div>
+<div>
+    @Html.DisplayNameFor(m => m.Contact)
+    @Html.DisplayFor(m => m.Contact)
+</div>
+<div>
+    @Html.DisplayNameFor(m => m.Image)
+    @Html.DisplayFor(m => m.Image)
+</div>
+<div>
+    <p>
+        @Html.ActionLink("Edit", "EditEvent", new { id = Model.ID }) |
+        @Html.ActionLink("Delete", "DeleteEvent", new { id = Model.ID }) |
+        @Html.ActionLink("Back", "Index")
+    </p>
+</div>

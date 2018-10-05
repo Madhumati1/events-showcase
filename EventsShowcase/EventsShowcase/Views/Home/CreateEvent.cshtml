@@ -1,0 +1,54 @@
+﻿@model EventsShowcase.Models.EventModel
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h2>Create</h2>
+
+
+@using (Html.BeginForm())
+{
+    <h4>EventsShowcase</h4>
+
+    <div>
+        @Html.LabelFor(m => m.Title)
+        @Html.EditorFor(m => m.Title)
+    </div>
+    <div>
+        @Html.LabelFor(m => m.Description)
+        @Html.TextAreaFor(m => m.Description)
+    </div>
+    <div>
+        @Html.LabelFor(m => m.StartDate)
+        @Html.EditorFor(m => m.StartDate)
+    </div>
+    <div>
+        @Html.LabelFor(m => m.EndDate)
+        @Html.EditorFor(m => m.EndDate)
+    </div>
+    <div>
+        @Html.LabelFor(m => m.Price)
+        @Html.EditorFor(m => m.Price)
+    </div>
+    <div>
+        @Html.LabelFor(m => m.Location)
+        @Html.EditorFor(m => m.Location)
+    </div>
+    <div>
+        @Html.LabelFor(m => m.Organizer)
+        @Html.EditorFor(m => m.Organizer)
+    </div>
+    <div>
+        @Html.LabelFor(m => m.Contact)
+        @Html.EditorFor(m => m.Contact)
+    </div>
+    <div>
+        @Html.LabelFor(m => m.Image)
+        @Html.EditorFor(m => m.Image)
+    </div>
+    <div>
+        <input type="submit" value="Create Event" />
+    </div>
+}
+
+@Html.ActionLink("Back", "Index")

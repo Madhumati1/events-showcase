@@ -1,0 +1,74 @@
+﻿@model IEnumerable<EventModel>
+
+@{
+    ViewData["Title"] = "Home";
+}
+
+<hr />
+<div class="container">
+    @foreach (var eventItem in Model)
+    {
+    <div class="row">
+        <div class="col1">
+            <a href="@Url.Action("ViewEvent", new { id = eventItem.ID })">
+                <img class="home-list-img" src="@Url.Content(eventItem.Image)" alt="">
+            </a>
+        </div>
+        <div class="col2">
+            <h3>@Html.DisplayFor(m => eventItem.Title) (£@Html.DisplayFor(m => eventItem.Price))</h3>
+            <p>@Html.DisplayFor(m => eventItem.Description)</p>
+            <p>Starts: @Html.DisplayFor(m => eventItem.StartDate)</p>
+            <p>Location: @Html.DisplayFor(m => eventItem.Location) @Html.DisplayFor(m => eventItem.City)</p>
+            <a class="btn btn-primary" href="@Url.Action("ViewEvent", new { id = eventItem.ID })">View Event</a>
+        </div>
+    </div>
+        <hr class="home-hr-break" />
+    }
+
+</div>
+
+@*<table>
+
+    @*Table column header details*@
+
+@*<tr>
+        <th> @Html.DisplayNameFor(eventModel => eventModel.Title) </th>
+        <th> @Html.DisplayNameFor(eventModel => eventModel.Description) </th>
+        <th> @Html.DisplayNameFor(eventModel => eventModel.StartDate) </th>
+        <th> @Html.DisplayNameFor(eventModel => eventModel.EndDate) </th>
+        <th> @Html.DisplayNameFor(eventModel => eventModel.Price) </th>
+        <th> @Html.DisplayNameFor(eventModel => eventModel.Location) </th>
+        <th> @Html.DisplayNameFor(eventModel => eventModel.City) </th>
+        <th> @Html.DisplayNameFor(eventModel => eventModel.Category) </th>
+        <th> @Html.DisplayNameFor(eventModel => eventModel.Organizer) </th>
+        <th> @Html.DisplayNameFor(eventModel => eventModel.Contact) </th>
+        <th> @Html.DisplayNameFor(eventModel => eventModel.Image) </th>
+    </tr>*@
+
+
+@*Rows detailing the events *@
+
+@* @foreach (var eventItem in Model)
+    {
+        <tr>
+            <td>@Html.DisplayFor(m => eventItem.Title)</td>
+            <td>@Html.DisplayFor(m => eventItem.Description)</td>
+            <td>@Html.DisplayFor(m => eventItem.StartDate)</td>
+            <td>@Html.DisplayFor(m => eventItem.EndDate)</td>
+            <td>@Html.DisplayFor(m => eventItem.Price)</td>
+            <td>@Html.DisplayFor(m => eventItem.Location)</td>
+            <td>@Html.DisplayFor(m => eventItem.City)</td>
+            <td>@Html.DisplayFor(m => eventItem.Category)</td>
+            <td>@Html.DisplayFor(m => eventItem.Organizer)</td>
+            <td><a href="@Url.Action(eventItem.Contact)">Contact</a></td>
+            <td><img src="@Url.Content(eventItem.Image)" alt="" class="home-list-img" /></td>
+            <td>
+                @Html.ActionLink("Edit", "EditEvent", new { id = eventItem.ID })
+                @Html.ActionLink("View", "ViewEvent", new { id = eventItem.ID })
+                @Html.ActionLink("Delete", "DeleteEvent", new { id = eventItem.ID })
+            </td>
+        </tr>
+    }
+
+
+    </table>*@
